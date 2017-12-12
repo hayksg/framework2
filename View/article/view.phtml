@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title<?= htmlentities($oneNews->title) ?></title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+        <h3><?= htmlentities($oneNews->title) ?></h3>
+        <div>
+            <div><?= nl2br(htmlentities($oneNews->content)) ?></div>
+            <hr>
+            <div><a href="/">&Lt; Back</a></div>
+        </div>
+    </body>
+</html>

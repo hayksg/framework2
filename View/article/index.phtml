@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>All articles</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+        <h3>All articles</h3>
+        <?php foreach ($allNews as $news) : ?>
+        <div>
+            <h4><?= htmlentities($news->title) ?></h4>
+            <div><?= nl2br(htmlentities($news->short_content)) ?></div>
+            <hr>
+            <div><a href="/article/<?= (int)$news->id ?>">Read more</a></div>
+        </div>
+        <?php endforeach; ?>
+    </body>
+</html>
