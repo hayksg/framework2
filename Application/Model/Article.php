@@ -1,6 +1,8 @@
 <?php
 
-include(ROOT . 'Components/AbstractModel.php');
+namespace Application\Model;
+
+use Application\Components\AbstractModel;
 
 class Article extends AbstractModel
 {

@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Components;
+
 abstract class AbstractModel 
 {
     public static $tableName;
@@ -12,7 +14,7 @@ abstract class AbstractModel
         $result = $db->query($sql);
         
         if ($result) {
-            $result->setFetchMode(PDO::FETCH_OBJ);
+            $result->setFetchMode(\PDO::FETCH_OBJ);
             $row = $result->fetchAll();
             
             return $row ?: false;
@@ -29,10 +31,10 @@ abstract class AbstractModel
         $sql .= "LIMIT 1";
         
         $stmt = $db->prepare($sql);
-        $stmt->bindParam('id', $id, PDO::PARAM_INT);
+        $stmt->bindParam('id', $id, \PDO::PARAM_INT);
         $stmt->execute();
         
-        $row = $stmt->fetch(PDO::FETCH_OBJ);
+        $row = $stmt->fetch(\PDO::FETCH_OBJ);
         return $row ?: false;
     }
 }

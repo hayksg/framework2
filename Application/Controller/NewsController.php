@@ -1,6 +1,8 @@
 <?php
 
-include(ROOT . 'Model/News.php');
+namespace Application\Controller;
+
+use Application\Model\News;
 
 class NewsController 
 {

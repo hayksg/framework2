@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Components;
+
 class Router 
 {
     private $config;
@@ -35,13 +37,13 @@ class Router
                 $internalRoute = preg_replace($pattern, $path, $uri);
                 $segments = explode('/', $internalRoute);
                 
-                $controllerName = ucfirst(array_shift($segments)) . 'Controller';
+                $controllerName = 'Application\Controller\\' . ucfirst(array_shift($segments)) . 'Controller';
                 $actionName     = array_shift($segments) . 'Action';
                 
                 $arguments = $segments;
 
                 // Create controller file
-                $controllerFile = ROOT . 'Controller/' . $controllerName . '.php';
+                $controllerFile = ROOT . 'Application/Controller/' . $controllerName . '.php';
                 
                 if (is_file($controllerFile)) {
                     include_once($controllerFile);

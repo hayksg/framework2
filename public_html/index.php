@@ -1,5 +1,7 @@
 <?php
 
+use Application\Components\Router;
+
 // Front Controller
 
 // Setings
@@ -8,8 +10,9 @@ error_reporting(E_ALL);
 
 // Include configuration files
 define('ROOT', __DIR__ . '/../');
-require_once(ROOT . 'Components/Router.php');
-require_once(ROOT . 'Components/DB.php');
+#require_once(ROOT . 'Components/Router.php');
+#require_once(ROOT . 'Components/DB.php');
+require_once(ROOT . 'config/autoload.php');
 
 // DB connection
 
